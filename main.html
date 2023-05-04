@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thế Giới Di Động</title>
+    <!-- Boostrap 5  off-->
+    <link rel="stylesheet" href="bootstrap-5.0.2/dist/css/bootstrap.min.css">
+    <script src="bootstrap-5.0.2/dist/js/bootstrap.min.js"></script>
+    <!-- AngularJS on-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <!-- ansome -->
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body ng-app="myapp" ng-controller="myCtrl1">
+    <!-- HEADER -->
+    <!-- Header -->
+    <!-- TOP -->
+    <div id="carouselExample" class="carousel carousel-dark slide carousel-fade">
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="background-color: rgb(125, 2, 3);">
+                <img src="img/header/hinh1.png" class="d-block mx-auto img-fluid" alt="hinh1">
+            </div>
+            <div class="carousel-item" style="background-color: rgb(178, 6, 11);">
+                <img src="img/header/hinh2.png" class="d-block mx-auto img-fluid " alt="hinh2">
+            </div>
+        </div>
+        <button class="carousel-control-prev" style="left: -4rem;" type="button" data-bs-target="#carouselExample"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" style="right: -4rem;" type="button" data-bs-target="#carouselExample"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+    <!--  -->
+    <header class="" style="background-color: #ffd400;">
+        <!-- HEADER MID -->
+        <nav class="container navbar navbar-expand-lg navbar-light bg-body-tertiary"
+            style="background-color:#ffd400; padding-bottom: 0;">
+            <div class="container-fluid" style="width: 1244px;">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="#">
+                            <img src="img/header/TGDD_Logo.png" alt="" width="228" height="44"
+                                class="d-inline-block align-text-top">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn p-0 m-2" style="color: black; background-color: rgba(255,172,10,.6);" href="#"
+                            role="button">
+                            <div class="text-start"
+                                style="width: 130px; line-height: 16px; height: 32px; font-size: 11px;">
+                                Xem giá, tồn kho tại:
+                                <p class="text-start fw-bold ">Công viên phần...</p>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Tìm kiếm -->
+                    <li class="nav-item">
+                        <form class="d-flex input-group" style="width: 300px; background-color: #ffd400;">
+                            <!-- <a href="#!find" style="text-decoration: none;">   -->
+                                <input class="form-control mx-0 m-2" ng-model="search.name" type="text"
+                                style="border: 0; border-radius: 0.25rem 0 0 0.25rem; width: 250px;" placeholder="Bạn tìm gì..." aria-label="Search">
+                            <button type="button" class="btn mx-0 m-2" style="height: 36px; background-color: #fff;">
+                                <a href="#!find"><i class="fas fa-search" style="color: black;"></i></a>
+                            </button>
+                        </form>
+                        
+                    </li>
+                    <!-- Tìm kiếm end -->
+                    <li class="nav-item">
+                        <button class="btn badge text-wrap fw-normal m-2"
+                            style="width: 6rem; height: 40px; background-color: rgba(255,172,10,.6); color:black; ">
+                            Lịch sử đơn hàng
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#!cart"><button class="btn badge m-2"
+                                style="width: 7rem; height: 40px; background-color: rgba(255,172,10,.6); color:black; ">
+                                <img src="img/header/shopping-cart.svg" alt="">
+                                Giỏ hàng
+                                <div class="d-inline" ng-show="cart.length > 0">
+                                    ({{cart.length}})
+                                </div>
+                            </button></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-center p-2" style="font-size: 14px; color: black;"
+                            aria-current="page" href="#">24h <br> Công nghệ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link m-2 p-2"
+                            style="font-size: 14px; color: black; border-left:1px solid #ffe56c; border-right:1px solid #ffe56c;"
+                            aria-current="page" href="#">Hỏi Đáp</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link m-2 p-2" style="font-size: 14px; color: black;" aria-current="page"
+                            href="#">Game App</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!--  -->
+        <!-- HEADER MAIN -->
+        <nav class="container  navbar navbar-expand-lg navbar-light" style="background-color:#ffd400; padding-top: 0;">
+            <div class="container-fluid" style="width: 1220px;">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                    <ul class="nav justify-content-center ">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark p-0 m-2" style="font-size:14px;" style="font-size:14px;"
+                                aria-current="page" href="#">
+                                <img src="img/header/icon-phone-96x96-2.png" class="img-fluid "
+                                    style="width: 20px; height: 20px;" alt="">
+                                Điện thoại</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link text-dark" style="font-size:14px;" href="#">
+                                <img src="img/header/icon-laptop-96x96-1.png" class="mx-auto img-fluid"
+                                    style="width: 20px; height: 20px;" alt="">
+                                Laptop</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link text-dark" style="font-size:14px;" href="#">
+                                <img src="img/header/icon-tablet-96x96-1.png" class="mx-auto img-fluid"
+                                    style="width: 20px; height: 20px;" alt="">
+                                Tablet</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" style="font-size:14px;" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="img/header/icon-phu-kien-96x96-1.png" class="mx-auto img-fluid"
+                                    style="width: 20px; height: 20px;" alt="">
+                                Phụ kiện
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link text-dark" style="font-size:14px;" href="#">
+                                <img src="img/header/icon-smartwatch-96x96-1.png" class="mx-auto img-fluid"
+                                    style="width: 20px; height: 20px;" alt="">
+                                Smartwatch</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link text-dark" style="font-size:14px;" href="#">
+                                <img src="img/header/watch-icon-96x96.png" class="mx-auto img-fluid"
+                                    style="width: 20px; height: 20px;" alt="">
+                                Đồng hồ</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link text-dark" style="font-size:14px;" href="#">
+                                <img src="img/header/icon-header-may-cu-30x30.png" class="mx-auto img-fluid"
+                                    style="width: 20px; height: 20px;" alt="">
+                                Máy cũ giá rẻ</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" style="font-size:14px;"
+                                style="font-size:14px;" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <img src="img/header/icon-pc-96x96.png" class="mx-auto img-fluid"
+                                    style="width: 20px; height: 20px;" alt="">
+                                PC, Máy in
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link text-dark" style="font-size:14px;" href="#">
+                                Sim, Thẻ cào</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" style="font-size:14px;" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Dịch vụ tiện ích
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--  -->
+    </header>
+    <!--  -->
+    <main>
+        <section>
+            <div ng-view></div>
+        </section>
+    </main>
+
+    <script>
+        var indexCart = 0;
+        var app = angular.module("myapp", ["ngRoute"]);
+        app.controller("myCtrl1", function ($scope, $rootScope, $routeParams, $http) {
+
+            $scope.addCart = function (p) {
+                if (!$rootScope.cart) {
+                    $rootScope.cart = [];
+                }
+                var existingItem = $rootScope.cart.find(function (cartItem) {
+                    return cartItem.id === p.id;
+                });
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    p.quantity = 1;
+                    $rootScope.cart.push(p);
+                }
+                $rootScope.sumMoney = calculateSumMoney();
+            }
+            $rootScope.sumMoney = 0;
+            //Tính tổng tiền bên giỏ hàng
+            function calculateSumMoney() {
+                var sumMoney = 0;
+                if ($rootScope.cart) {
+                    for (var i = 0; i < $rootScope.cart.length; i++) {
+                        sumMoney += $rootScope.cart[i].quantity * $rootScope.cart[i].price;
+                    }
+                }
+                return sumMoney;
+            }
+
+            $rootScope.sumMoney = calculateSumMoney();
+
+            //Nhấn nút Cộng để thêm sản phẩm
+            $scope.addClick = function (index) {
+                $rootScope.cart[index].quantity = $rootScope.cart[index].quantity + 1;
+                if (typeof $rootScope.cart != 'undefined') {
+                    $rootScope.sumMoney = 0;
+                    for (var i = 0; i < $rootScope.cart.length; i++) {
+                        $rootScope.sumMoney = $rootScope.sumMoney + $rootScope.cart[i].quantity * $rootScope.cart[i].price;
+                    }
+                }
+            }
+            //trừ
+            $scope.subClick = function (index) {
+                if ($rootScope.cart[index].quantity > 1) {
+                    $rootScope.cart[index].quantity = $rootScope.cart[index].quantity - 1;
+                }
+                if (typeof $rootScope.cart != 'undefined') {
+                    $rootScope.sumMoney = 0;
+                    for (var i = 0; i < $rootScope.cart.length; i++) {
+                        $rootScope.sumMoney = $rootScope.sumMoney + $rootScope.cart[i].quantity * $rootScope.cart[i].price;
+                    }
+                }
+            }
+            //Xóa sản phẩm trong giỏ hàng
+            $scope.delProduct = function (index) {
+                $rootScope.cart.splice(index, 1);
+                if (typeof $rootScope.cart != 'undefined') {
+                    $rootScope.sumMoney = 0;
+                    for (var i = 0; i < $rootScope.cart.length; i++) {
+                        $rootScope.sumMoney = $rootScope.sumMoney + $rootScope.cart[i].quantity * $rootScope.cart[i].price;
+                    }
+                }
+            }
+            $scope.products = [];
+            $http.get("sanpham.json").then(function (response) {
+                $scope.products = response.data;
+            });
+            
+
+            $scope.index = $routeParams.url;
+            $scope.limit = 10;
+            $scope.loadMore = function () {
+                $scope.limit += 20;
+
+            }
+            $scope.showless = function () {
+                $scope.limit = 10;
+            }
+            $scope.scrollToTop = function () {
+                window.scrollTo(0, 0);
+            }
+
+
+        });
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when("/detail/:url", {
+                    templateUrl: "sanphamchitiet.html?" + Math.random(),
+                    controller: "myCtrl1"
+                })
+                .when("/cart", {
+                    templateUrl: "cart.html?" + Math.random(),
+                    controller: "myCtrl1"
+                })
+                .when("/find", {
+                    templateUrl: "timkiem.html?" + Math.random(),
+                    controller: "myCtrl1"
+                })
+                .otherwise({
+                    templateUrl: "sanpham.html",
+                    controller: "myCtrl1"
+                })
+
+
+        });
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- FOOTER -->
+    <footer class="  text-center text-lg-start" style="background-color: rgb(255, 255, 255);">
+        <!-- Grid container -->
+        <div class="container d-flex justify-content-center">
+            <!--Grid row-->
+            <div class="row">
+                <!--Grid column-->
+                <div class="col-xl-3 col-md-6 mb-4 mb-md-0" style="width: 250px;">
+                    <ul class="list-unstyled mb-0" style="text-decoration: none;">
+                        <li>
+                            <a href="#!" class="text-dark" style="text-decoration: none;">Tích điểm Quà tặng VIP</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-dark" style="text-decoration: none;">Lịch sử mua hàng</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-dark" style="text-decoration: none;">Tìm hiểu về mua trả
+                                góp</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-dark" style="text-decoration: none;">Chính sách bảo hành</a>
+                        </li>
+                        <li>
+                            <a href="" class="text-dark" style="text-decoration: none;">Xem thêm</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+                <div class="col-xl-3 col-md-6 mb-4 mb-md-0" style="width: 260px;">
+                    <ul class="list-unstyled mb-0" style="text-decoration: none;">
+                        <li>
+                            <a href="#!" class="text-dark" style="text-decoration: none;">Giới thiệu công ty
+                                (MWG.vn)</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-dark" style="text-decoration: none;">Tuyển dụng</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-dark" style="text-decoration: none;">Gửi góp ý, khiếu nại</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-dark" style="text-decoration: none;">Tìm siêu thị (3.381
+                                shop)</a>
+                        </li>
+                        <li>
+                            <a href="" class="text-dark" style="text-decoration: none;">Xem bản mobile</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-xl-3 col-md-6 mb-4 mb-md-0">
+                    <ul class="list-unstyled mb-0" style="text-decoration: none;">
+                        <li>
+                            <a href="#!" class="text-dark" style="text-decoration: none;"><Strong>Tổng đài hỗ
+                                    trợ</Strong> (Miễn phí
+                                gọi)</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-dark" style="text-decoration: none;">Gọi mua: <strong
+                                    style="color: blue;">1800.1060</strong> (7:30 - 22:00)</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-dark" style="text-decoration: none;">Kỹ thuật: <strong
+                                    style="color: blue;">1800.1763</strong> (7:30 - 22:00)</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-dark" style="text-decoration: none;">Khiếu nại: <strong
+                                    style="color: blue;">1800.1062</strong> (7:30 - 22:00)</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-dark" style="text-decoration: none;">Bảo hành: <strong
+                                    style="color: blue;">1800.1064</strong> (7:30 - 22:00)</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <div class="">
+                        <div class="pb-1" style="width: 356px;">
+                            <a href="" class="" style="text-decoration: none;">
+                                <img width="18" height="18" src="img/footer/icons8-facebook-48.png" alt="">
+                                3783.9k Fan
+                            </a>
+                            <a href="" class="" style="text-decoration: none;">
+                                <img width="18" height="18" src="img/footer/icons8-youtube-48.png" alt="">
+                                855k Đăng ký
+                            </a>
+                            <a rel="nofollow" href="" target="_blank" class="" style="text-decoration: none;">
+                                <img alt="zalo" width="18" height="18" src="img/footer/icon_zalo.png">
+                                Zalo TGDĐ
+                            </a>
+                        </div>
+                        <div style="width: 330px;">
+                            <a rel="nofollow" href="" target="_blank">
+                                <img width="79" height="24"
+                                    src="img/footer/logo-da-thong-bao-bo-cong-thuong-mau-xanh.png" alt="">
+                            </a>
+                            <a rel="nofollow" href="" target="_blank">
+                                <img width="25" height="25" src="img/footer/icons8-bar-graph-64.png" alt="">
+                            </a>
+                            <a rel="nofollow" class="" href="" target="_blank">
+                                <img width="122" height="24" src="img/footer/dmca-icon.png" alt="">
+                            </a>
+                            <a class="_ncsc" rel="nofollow" href="" title="Chung nhan Tin Nhiem Mang" target="_blank">
+                                <img class="" width="85" height="35" alt="Chung nhan Tin Nhiem Mang"
+                                    src="img/footer/handle_cert.png">
+                            </a>
+                        </div>
+                        <div>
+                            <div>
+                                <p style="margin-bottom: 5px;">Website cùng tập đoàn</p>
+                                <ul class="list-group list-group-horizontal" style="margin: 0 0 0 0;">
+                                    <li class="list-group-item" style="border: 0; padding: 0 0 0 0; margin-right: 3px;">
+                                        <a href="" title="Chuỗi cửa hàng cao cấp Apple">
+                                            <img width="80" height="24" src="img/footer/Logo-webmoi9.png" alt="">
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item" style="border: 0; padding: 0 0 0 0; margin-right: 3px;">
+                                        <a rel="nofollow" href="" target="_blank">
+                                            <img width="80" height="24" src="img/footer/Logo-webmoi.png" alt="">
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item" style="border: 0; padding: 0 0 0 0; margin-right: 3px;">
+                                        <a rel="nofollow" href="" target="_blank">
+                                            <img width="80" height="24" src="img/footer/Logo-webmoi2.png" alt="">
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item" style="border: 0; padding: 0 0 0 0; margin-right: 3px;">
+                                        <a rel="nofollow" href="" target="_blank" title="Chuỗi nhà thuốc chuẩn GPP">
+                                            <img width="80" height="24" src="img/footer/Logo-webmoi3.png" alt="">
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="list-group list-group-horizontal">
+
+                                    <li class="list-group-item"
+                                        style="border: 0; padding: 0 0 0 0; margin-right: 3px; margin-top: 3px;">
+                                        <a rel="nofollow" href="" target="_blank" title="Chuỗi cửa hàng mẹ và bé">
+                                            <img width="80" height="24" src="img/footer/Logo-webmoi7.png" alt="">
+
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item"
+                                        style="border: 0; padding: 0 0 0 0; margin-right: 3px; margin-top: 3px;">
+                                        <a rel="nofollow" href="" target="_blank" title="Chuỗi cửa hàng thể thao">
+                                            <img width="80" height="24" src="img/footer/Logo-webmoi11.png" alt="">
+
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item"
+                                        style="border: 0; padding: 0 0 0 0; margin-right: 3px; margin-top: 3px;">
+                                        <a rel="nofollow" href="" target="_blank"
+                                            title="Dịch vụ vệ sinh máy lạnh, sửa chữa điện nước, lắp đặt máy lạnh, máy giặt, tivi">
+                                            <img width="80" height="24" src="img/footer/Logo-webmoi4.png" alt="">
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item"
+                                        style="border: 0; padding: 0 0 0 0; margin-right: 3px; margin-top: 3px;">
+                                        <a rel="nofollow" href="" target="_blank" title="Nông trại rau sạch">
+                                            <img width="80" height="24" src="img/footer/Logo-webmoi5.png" alt="">
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="list-group list-group-horizontal">
+
+                                    <li class="list-group-item"
+                                        style="border: 0; padding: 0 0 0 0;margin-bottom: 10px; margin-top: 3px;">
+                                        <a rel="nofollow" href="" target="_blank"
+                                            title="Trang tuyển dụng của tập đoàn Thế Giới Di Động">
+                                            <img width="80" height="24" src="img/footer/Logo-webmoi6.png" alt="">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <div class="text-center p-3" style="font-size: 12px; background-color: #f1f1f1;;">
+            © 2018. Công ty cổ phần Thế Giới Di Động. GPDKKD: 0303217354 do sở KH &amp; ĐT TP.HCM cấp ngày
+            02/01/2007.
+            GPMXH:
+            238/GP-BTTTT do Bộ Thông Tin và Truyền Thông cấp ngày 04/06/2020.<br>
+            Địa chỉ: 128 Trần Quang Khải, P. Tân Định, Q.1, TP.Hồ Chí Minh. Điện thoại: 028 38125960. Email:
+            cskh@thegioididong.com. Chịu trách nhiệm nội dung: Huỳnh Văn Tốt. <a rel="nofollow"
+                href="/thoa-thuan-su-dung-trang-mxh">Xem chính sách sử dụng</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!--  -->
+
+    <!-- AngularJS -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- Boostrap 5 off -->
+    <script src="bootstrap-5.0.2/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

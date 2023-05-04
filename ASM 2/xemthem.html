@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Boostrap 5  off-->
+  <link rel="stylesheet" href="bootstrap-5.0.2/dist/css/bootstrap.min.css">
+  <script src="bootstrap-5.0.2/dist/js/bootstrap.min.js"></script>
+  <!-- AngularJS on-->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+</head>
+
+<body ng-app="myapp" ng-controller="myCtrl1">
+  <input type="text" ng-model="search" placeholder="Search...">
+       
+
+
+
+  <div class="col-xl">
+    <div class="card  w-100 mx-auto" style=" background-color: #f3f3f3; border-color: #f3f3f3;">
+      <div class="card-body mx-auto pt-0 pb-0" style="background-color:#f3f3f3; max-width: 1300px;">
+        <div class="row ">
+                 
+          <!-- Một sản phẩm -->
+          <div class="col-xl-2 mx-2 px-0 py-0" style="width: 227px; height: 432x; " ng-repeat="sp in products | filter:search">
+            <div class="card" style=" width: 227px; height: 420px; border: white;">
+              <div class="card-header" style="background-color: white; border-bottom: 0;">
+                <span class="text-start badge "
+                  style="font-size: 11px; background-color: #f1f1f1; color: #333;">{{sp.sale}}</span>
+              </div>
+              <a href="#!detail/{{$index}}"> <img class="img-fluid mx-auto" src="img/product1/{{sp.image}}" height="207"
+                  width="207" alt=""></a>
+              <div class="m-2">
+                <p class="text-start m-1 p-0"
+                  style="width: 60%; background: linear-gradient(to right,#ef3006,#c60004); border-radius: 20px; line-height: 13px; ">
+                  <img width="20" height="20" src="img/product/Label-50x50-1.png" alt="">
+                  <span style="color:white; font-size: 10px;">{{sp.capsale}}</span>
+                </p>
+                <a href="" style="text-decoration: none; color:black;">
+                  <h>{{sp.name}}</h>
+                </a>
+                <strong class="text-danger">
+                  {{sp.price}}
+                  <small
+                    style="font-weight: normal; color: #eb5757; background:#fff0e9; border-radius: 4px; padding: 1px 2px 2px 2px;">-5%</small>
+                </strong>
+                <br>
+                <strong style="font-weight: normal; color:#d0021c;">
+                  <img height="15px" width="15px" src="img/product/download.png" alt="">
+                  {{sp.pricesale}}</strong>
+                <p style="color: #999;">
+                  <b style="color: #fb6e2e;">{{sp.danhgia}}</b><img style="margin: 0 8px 2px 5px;" width="12"
+                    height="12" src="img/product/icons8-star-filled-48.png" alt="">{{sp.luotxem}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Một phẩm end -->
+
+
+        
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="col-xl">
+    <div class="card  w-100 mx-auto" style=" background-color: #f3f3f3; border-color: #f3f3f3;">
+      <div class="card-body mx-auto pb-0" style="background-color:#f3f3f3; max-width: 1300px;">
+        <div class="row ">
+          <div class="col-xl-2 mx-2 px-0 py-0" style="width: 227px; height: 432x; ">
+
+
+            <div class="card" style=" width: 227px; height: 420px; border: white;">
+              <div class="card-header" style="background-color: white; border-bottom: 0;">
+                <span class="text-start badge "
+                  style="font-size: 11px; background-color: #f1f1f1; color: #333;">{{sp.sale}}</span>
+              </div>
+              <a href="#!detail/{{$index}}"> <img class="img-fluid mx-auto" src="img/product1/{{sp.image}}" height="207"
+                  width="207" alt=""></a>
+              <div class="m-2">
+                <p class="text-start m-1 p-0"
+                  style="width: 60%; background: linear-gradient(to right,#ef3006,#c60004); border-radius: 20px; line-height: 13px; ">
+                  <img width="20" height="20" src="img/product/Label-50x50-1.png" alt="">
+                  <span style="color:white; font-size: 10px;">{{sp.capsale}}</span>
+                </p>
+                <a href="" style="text-decoration: none; color:black;">
+                  <h>{{sp.name}}</h>
+                </a>
+                <strong class="text-danger">
+                  {{sp.price}}
+                  <small
+                    style="font-weight: normal; color: #eb5757; background:#fff0e9; border-radius: 4px; padding: 1px 2px 2px 2px;">-5%</small>
+                </strong>
+                <br>
+                <strong style="font-weight: normal; color:#d0021c;">
+                  <img height="15px" width="15px" src="img/product/download.png" alt="">
+                  {{sp.pricesale}}</strong>
+                <p style="color: #999;">
+                  <b style="color: #fb6e2e;">{{sp.danhgia}}</b><img style="margin: 0 8px 2px 5px;" width="12"
+                    height="12" src="img/product/icons8-star-filled-48.png" alt="">{{sp.luotxem}}
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          
+         
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  <div class="card-footer text-center" style="background-color: #f3f3f3; border-color: #f3f3f3;">
+    <button class="btn text-dark fw-bold" style="background-color: white;" type="button">Xem tất cả</button>
+  </div>
+
+
+  <script>
+    var app = angular.module("myapp", []);
+    app.controller("myCtrl1", function ($scope) {
+        $scope.products = [{
+            name: "IPhone 14 Pro Max 128GB",
+            sale: "Trả góp 0%",
+            capsale: "SALE TO ĐÓN TẾT",
+            image: "iphone.jpg",
+            price: "29.490.000₫",
+            pricesale: "Giá rẻ: 31.890.000₫",
+            danhgia: "4.6",
+            luotxem: "(191)",
+            description: "Cuối cùng thì chiếc iPhone 14 Pro Max cũng đã chính thức lộ diện tại sự kiện ra mắt thường niên vào ngày 08/09 đến từ nhà Apple, kết thúc bao lời đồn đoán bằng một bộ thông số cực kỳ ấn tượng cùng vẻ ngoài đẹp mắt sang trọng. Từ ngày 14/10/2022 người dùng đã có thể mua sắm các sản phẩm iPhone 14 series với đầy đủ phiên bản tại Thế Giới Di Động."
+        },
+        {
+            name: "OPPO A57 128GB",
+            sale: "Trả góp 0%",
+            capsale: "SALE TO ĐÓN TẾT",
+            image: "oppo.jpeg",
+            price: "4.490.000₫",
+            pricesale: "Giá rẻ: 31.890.000₫",
+            danhgia: "4.1",
+            luotxem: "(158)",
+            description: "OPPO đã bổ sung thêm vào dòng sản phẩm OPPO A giá rẻ một thiết bị mới có tên OPPO A57 128GB. Khác với mẫu A57 5G đã được ra mắt trước đó, điện thoại dòng A mới có màn hình HD+, camera chính 13 MP và pin 5000 mAh."
+        }, 
+        {
+            name: "Samsung Galaxy A04",
+            sale: "Trả góp 0%",
+            capsale: "SALE TO ĐÓN TẾT",
+            image: "samsunga04.jpg",
+            price: "4.490.000₫",
+            pricesale: "Giá rẻ: 3.490.000₫",
+            danhgia: "4.1",
+            luotxem: "(158)",
+            description: "Samsung Galaxy A04 (4GB/64GB) sở hữu màn hình kích thước lớn, camera độ phân giải cao lên đến 50 MP và viên pin 5000 mAh, hứa hẹn sẽ trở thành đối thủ đáng gờm trong phân khúc điện thoại giá rẻ."
+        },
+        {
+            name: "POCO C40",
+            sale: "Trả góp 0%",
+            capsale: "SALE TO ĐÓN TẾT",
+            image: "xiaomi.jpg",
+            price: "4.490.000₫",
+            pricesale: "Giá rẻ: 2.890.000₫",
+            danhgia: "4.1",
+            luotxem: "(158)",
+            description: "Samsung Galaxy A04 (4GB/64GB) sở hữu màn hình kích thước lớn, camera độ phân giải cao lên đến 50 MP và viên pin 5000 mAh, hứa hẹn sẽ trở thành đối thủ đáng gờm trong phân khúc điện thoại giá rẻ."
+        },
+        {
+            name: "Samsung Galaxy A04",
+            sale: "Trả góp 0%",
+            capsale: "SALE TO ĐÓN TẾT",
+            image: "samsung-galaxy-a23.jpg",
+            price: "4.490.000₫",
+            pricesale: "Giá rẻ: 3.490.000₫",
+            danhgia: "4.1",
+            luotxem: "(158)",
+            description: "Samsung Galaxy A04 (4GB/64GB) sở hữu màn hình kích thước lớn, camera độ phân giải cao lên đến 50 MP và viên pin 5000 mAh, hứa hẹn sẽ trở thành đối thủ đáng gờm trong phân khúc điện thoại giá rẻ."
+        }];
+      });
+
+
+ 
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- AngularJS -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <!-- Boostrap 5 off -->
+  <script src="bootstrap-5.0.2/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

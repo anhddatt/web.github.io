@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="bootstrap-5.0.2/dist/css/bootstrap.min.css">
+  <script src="bootstrap-5.0.2/dist/js/bootstrap.min.js"></script>
+  <!-- ansome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Trang chi tiết sản phẩm</title>
+</head>
+
+<body>
+
+  <div class="container w-100 mx-auto my-2 " style="max-width: 1200px; ">
+    <div style="box-shadow: 0 0 18px rgb(0 0 0 / 12%)">
+      <div class="card">
+        <div class="card-header" style="background-color: #fff;">
+          <p><span class="h2">Tìm kiếm </span><span class="h4"></span></p>
+        </div>
+        <div class="d-inline">
+          <button type="button" class="btn btn-primary m-2" ng-click="prop='name'">Sắp xếp theo tên</button>
+          <button type="button" class="btn btn-secondary " ng-click="prop='-price'">Giá từ thấp đến cao</button>
+          <button type="button" class="btn btn-secondary " ng-click="prop='price'">Giá từ cao đến thấp</button>
+          <hr class="m-0">
+        </div>
+        <div ng-show="notFound">Không tìm thấy sản phẩm nào.</div>
+
+  
+        <div class="card-body">
+          <div class="row d-flex justify-content-center ">
+            <div class="col-sm-2 my-2" style="width: 226px;" ng-repeat="sp in products | orderBy: prop| filter:search | limitTo: limit ">
+              <div class="card">
+                <div class="card-header" style="background-color: white; border-bottom: 0;">
+                  <span class="text-start badge "
+                    style="font-size: 11px; background-color: #f1f1f1; color: #333;">{{sp.sale}}</span>
+                </div>
+                <a href="#!detail/{{$index}}" ng-click="scrollToTop()"> <img class="img-fluid mx-auto"
+                    src="img/product1/{{sp.image}}" height="207" width="207" alt=""></a>
+                <div class="m-2">
+                  <p class="text-start m-1 p-0"
+                    style="width: 60%; background: linear-gradient(to right,#ef3006,#c60004); border-radius: 20px; line-height: 13px; ">
+                    <img width="20" height="20" src="img/product/Label-50x50-1.png" alt="">
+                    <span style="color:white; font-size: 10px;">{{sp.capsale}}</span>
+                  </p>
+                  <a href="" style="text-decoration: none; color:black;">
+                    <h>{{sp.name}}</h>
+                  </a> <br>
+                  <strong class="text-danger">
+                    {{sp.price}}
+                    <small
+                      style="font-weight: normal; color: #eb5757; background:#fff0e9; border-radius: 4px; padding: 1px 2px 2px 2px;">-5%</small>
+                  </strong>
+                  <br>
+                  <strong style="font-weight: normal; color:#d0021c;">
+                    <img height="15px" width="15px" src="img/product/download.png" alt="">
+                    {{sp.pricesale}}</strong>
+                  <p style="color: #999;">
+                    <b style="color: #fb6e2e;">{{sp.danhgia}}</b><img style="margin: 0 8px 2px 5px;" width="12"
+                      height="12" src="img/product/icons8-star-filled-48.png" alt="">{{sp.luotxem}}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer text-center" style="background-color: #f3f3f3; border-color: #f3f3f3;">
+          <button class="btn text-dark fw-bold" style="background-color: white;" type="button"
+            ng-show="limit < products.length" ng-click="loadMore()">Xem tất cả</button>
+          <button class="btn text-dark fw-bold" style="background-color: white;" type="button"
+          ng-show="limit !== 10" ng-click="showless()">Thu gọn</button>
+        </div>
+      </div>
+      <div class="card-footer">
+
+          <button type="button" class=" me-auto p-2 bd-highlight btn me-2">
+              <a href="#!">Tiếp tục mua sắm</a>
+          </button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <script src="bootstrap-5.0.2/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
